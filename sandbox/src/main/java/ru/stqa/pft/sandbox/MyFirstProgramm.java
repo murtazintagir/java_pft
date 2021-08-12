@@ -18,7 +18,6 @@ public class MyFirstProgramm {
 		System.out.println("Расстояние между двумя точками p1 и p2 = " + p1.distance(p2)); // Вычисление с помощью метода
 	}
 
-	// функция для решения по заданию п. 2.1, 2.2, 2.3
 	public static double distance(Point p1, Point p2) {
 		return Math.sqrt(Math.pow((p1.x - p2.x), 2) + Math.pow((p1.y - p2.y), 2));
 	}
