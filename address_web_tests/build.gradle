@@ -1,19 +1,10 @@
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-
-repositories {
+repositories{
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-}
-
-test {
-    useJUnitPlatform()
+dependencies{
+    implementation 'org.testng:testng:7.4.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
 }
