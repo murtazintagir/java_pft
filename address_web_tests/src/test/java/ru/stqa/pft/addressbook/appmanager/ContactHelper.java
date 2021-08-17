@@ -44,4 +44,12 @@ public class ContactHelper extends HelperBase{
     public void initContactCreation(String c) {
         click(By.linkText(c));
     }
+
+    public void selectContact() {
+        click(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void submitContactEdit(String u) {
+        click(By.name(u));
+    }
 }
