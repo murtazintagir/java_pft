@@ -35,4 +35,8 @@ public class HelperBase {
         wd.findElement(locator).click();
         new Select(wd.findElement(locator)).selectByVisibleText(text);
     }
+
+    protected void submit_del_contact(){
+        wd.switchTo().alert().accept();
+    }
 }

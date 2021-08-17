@@ -45,11 +45,27 @@ public class ContactHelper extends HelperBase{
         click(By.linkText(c));
     }
 
-    public void selectContact() {
+    public void editContact() {
         click(By.xpath("//img[@alt='Edit']"));
     }
 
     public void submitContactEdit(String u) {
         click(By.name(u));
+    }
+
+    public void selectFirstContact() {
+        click(By.name("selected[]"));
+    }
+
+    public void delSelectContact() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
+
+    public void submitContactDel(String d) {
+        click(By.name(d));
+    }
+
+    public void AssertTrue() {
+        wd.switchTo().alert().accept();
     }
 }
