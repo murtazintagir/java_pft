@@ -9,10 +9,6 @@ public class NavigationHelper extends HelperBase{
         super(wd);
     }
 
-    public void returnToHomePage() {
-        click(By.linkText("home page"));
-    }
-
     public void openContactPage() {
         if (isElementPresent(By.id("maintable"))){
             return;

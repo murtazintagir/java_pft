@@ -58,4 +58,8 @@ public class HelperBase {
     public void returnToGroupPage() {
         click(By.linkText("group page"));
     }
+
+    public void returnToHomePage() {
+        click(By.linkText("home page"));
+    }
 }
