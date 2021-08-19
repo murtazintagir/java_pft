@@ -12,7 +12,7 @@ public class ContactDelTests extends TestBase{
             app.getContactHelper().createContact(new ContactData("first_name", "middle_name", "last_name",
                     "nickname", "title", "company", "address", "home", "mobile",
                     "work", "fax", "email", "email2", "email3", "homepage", "address2",
-                    "phone2", "notes", "3", "July", "byear", "4", "April", "ayear", "name"), true);
+                    "phone2", "notes", "3", "July", "byear", "4", "April", "ayear", "[none]"), true);
         }
         app.getContactHelper().selectFirstContact();
         app.getContactHelper().delSelectContact();
