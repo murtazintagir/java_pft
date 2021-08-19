@@ -9,26 +9,22 @@ public class NavigationHelper extends HelperBase{
         super(wd);
     }
 
-    public void returnToGroupPage(String s) {
-        click(By.linkText(s));
+    public void returnToHomePage() {
+        click(By.linkText("home page"));
     }
 
-    public void returnToHomePage(String h) {
-        click(By.linkText(h));
-    }
-
-    public void openContactPage(String contact) {
+    public void openContactPage() {
         if (isElementPresent(By.id("maintable"))){
             return;
         }
-        click(By.linkText(contact));
+        click(By.linkText("home"));
     }
 
-    public void openGroupPage(String groups) {
+    public void openGroupPage() {
         if (isElementPresent(By.tagName("h1")) && wd.findElement(By.tagName("h1")).getText().equals("Groups")
                 && isElementPresent(By.name("new"))) {
            return;
         }
-        click(By.linkText(groups));
+        click(By.linkText("groups"));
     }
 }

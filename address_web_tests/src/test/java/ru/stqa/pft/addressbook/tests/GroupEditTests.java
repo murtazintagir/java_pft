@@ -7,11 +7,14 @@ public class GroupEditTests extends TestBase {
 
     @Test
     public void testGroupEdit(){
-        app.getNavigationHelper().openGroupPage("groups");
+        app.getNavigationHelper().openGroupPage();
+        if (! app.getGroupHelper().isThereAGroup()){
+            app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
+        }
         app.getGroupHelper().selectGroup();
-        app.getGroupHelper().initGroupEdit("edit");
+        app.getGroupHelper().initGroupEdit();
         app.getGroupHelper().fillGroupForm(new GroupData("name_edit", "header_edit", "footer_edit"));
-        app.getGroupHelper().submitGroupEdit("update");
-        app.getNavigationHelper().returnToGroupPage("group page");
+        app.getGroupHelper().submitGroupEdit();
+        app.getNavigationHelper().returnToGroupPage();
     }
 }

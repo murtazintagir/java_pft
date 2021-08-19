@@ -48,16 +48,16 @@ public class ContactHelper extends HelperBase{
         type(By.name("notes"),contactData.notes());
     }
 
-    public void initContactCreation(String c) {
-        click(By.linkText(c));
+    public void initContactCreation() {
+        click(By.linkText("add new"));
     }
 
     public void editContact() {
         click(By.xpath("//img[@alt='Edit']"));
     }
 
-    public void submitContactEdit(String u) {
-        click(By.name(u));
+    public void submitContactEdit() {
+        click(By.name("update"));
     }
 
     public void selectFirstContact() {

@@ -54,4 +54,8 @@ public class HelperBase {
             return false;
         }
     }
+
+    public void returnToGroupPage() {
+        click(By.linkText("group page"));
+    }
 }

@@ -6,7 +6,7 @@ public class ContactDelTests extends TestBase{
 
     @Test
     public void testDelContact(){
-        app.getNavigationHelper().openContactPage("home");
+        app.getNavigationHelper().openContactPage();
         app.getContactHelper().selectFirstContact();
         app.getContactHelper().delSelectContact();
         app.getContactHelper().AssertTrue();
