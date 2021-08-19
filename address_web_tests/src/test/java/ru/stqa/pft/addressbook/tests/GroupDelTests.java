@@ -6,7 +6,7 @@ public class GroupDelTests extends TestBase {
 
     @Test
     public void testGroupDel(){
-        app.getGroupHelper().openGroupPage("groups");
+        app.getNavigationHelper().openGroupPage("groups");
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().delSelectedGroup();
         app.getNavigationHelper().returnToGroupPage("group page");

@@ -24,10 +24,6 @@ public class GroupHelper extends HelperBase {
         click(By.name(s));
     }
 
-    public void openGroupPage(String groups) {
-        click(By.linkText(groups));
-    }
-
     public void delSelectedGroup() {
         click(By.name("delete"));
     }
