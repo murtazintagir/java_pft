@@ -88,4 +88,8 @@ public class ContactHelper extends HelperBase{
         returnToHomePage();
 
     }
+
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
 }
