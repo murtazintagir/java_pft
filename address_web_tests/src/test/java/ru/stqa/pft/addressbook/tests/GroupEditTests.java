@@ -13,7 +13,7 @@ public class GroupEditTests extends TestBase {
             app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
         }
         int before = app.getGroupHelper().getGroupCount();
-        app.getGroupHelper().selectGroup();
+        app.getGroupHelper().selectGroup(before - 1);
         app.getGroupHelper().initGroupEdit();
         app.getGroupHelper().fillGroupForm(new GroupData("name_edit", "header_edit", "footer_edit"));
         app.getGroupHelper().submitGroupEdit();

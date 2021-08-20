@@ -16,7 +16,7 @@ public class ContactDelTests extends TestBase{
                     "phone2", "notes", "3", "July", "byear", "4", "April", "ayear", "[none]"), true);
         }
         int before = app.getContactHelper().getContactCount();
-        app.getContactHelper().selectFirstContact();
+        app.getContactHelper().selectContact(before - 1);
         app.getContactHelper().delSelectContact();
         app.getContactHelper().AssertTrue();
         int after = app.getContactHelper().getContactCount();

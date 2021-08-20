@@ -16,7 +16,7 @@ public class ContactEditTests extends TestBase{
                     "phone2", "notes", "3", "July", "byear", "4", "April", "ayear", "[none]"), true);
         }
         int before = app.getContactHelper().getContactCount();
-        app.getContactHelper().editContact();
+        app.getContactHelper().editContact(before - 1);
         app.getContactHelper().fillContactForm(new ContactData("first", "middle_name", "last_name",
                 "nickname", "title", "company", "address", "home", "mobile",
                 "work", "fax", "email", "email2", "email3", "homepage", "address2",
