@@ -96,9 +96,4 @@ public class ContactHelper extends HelperBase{
     public int getContactCount() {
         return wd.findElements(By.name("selected[]")).size();
     }
-
-    public List<ContactData> getContactList() {
-        List<ContactData> contacts = new ArrayList<ContactData>();
-        List<WebElement> elements = wd.findElements(By.cssSelector("[name=entry]"));
-    }
 }

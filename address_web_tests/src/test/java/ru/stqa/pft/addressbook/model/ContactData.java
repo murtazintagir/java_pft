@@ -6,3 +6,4 @@ public record ContactData(String first_name, String middle_name, String last_nam
                           String notes, String bday, String bmonth, String byear, String aday, String amonth, String ayear,
                           String group) {
 }
+
