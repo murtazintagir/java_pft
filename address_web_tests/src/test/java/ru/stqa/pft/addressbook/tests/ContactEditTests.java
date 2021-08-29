@@ -12,9 +12,9 @@ public class ContactEditTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions(){
-        app.getNavigationHelper().openContactPage();
-        if (! app.getContactHelper().isThereAContact()){
-            app.getContactHelper().createContact(new ContactData("first_name", "middle_name", "last_name",
+        app.goTo().contactPage();
+        if (app.contact().list().size() == 0){
+            app.contact().create(new ContactData("first_name", "middle_name", "last_name",
                     "nickname", "title", "company", "address", "home", "mobile",
                     "work", "fax", "email", "email2", "email3", "homepage", "address2",
                     "phone2", "notes", "3", "July", "byear", "4", "April", "ayear", "[none]"), true);
@@ -23,15 +23,15 @@ public class ContactEditTests extends TestBase{
 
     @Test(enabled = false)
     public void testEditContact(){
-        List<ContactData> before = app.getContactHelper().getContactList();
+        List<ContactData> before = app.contact().list();
         int index = before.size() - 1;
-        app.getContactHelper().editContact(index);
+        app.contact().edit(index);
         ContactData contact = new ContactData(before.get(index).getId(),"first", "middle_name", "last_name",
                 "nickname", "title", "company", "address", "home", "mobile",
                 "work", "fax", "email", "email2", "email3", "homepage", "address2",
                 "phone2", "notes", "3", "July", "byear", "4", "April", "ayear", null);
-        app.getContactHelper().editContact(contact);
-        List<ContactData> after = app.getContactHelper().getContactList();
+        app.contact().edit(contact);
+        List<ContactData> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size());
 
         before.remove(index);

@@ -12,19 +12,19 @@ public class GroupEditTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions(){
-        app.getNavigationHelper().openGroupPage();
-        if (! app.getGroupHelper().isThereAGroup()){
-            app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
+        app.goTo().groupPage();
+        if (app.group().list().size() == 0){
+            app.group().create(new GroupData("name", "header", "footer"));
         }
     }
 
     @Test
     public void testGroupEdit(){
-        List<GroupData> before = app.getGroupHelper().getGroupList();
+        List<GroupData> before = app.group().list();
         int index = before.size() - 1;
         GroupData group = new GroupData(before.get(index).getId(), "name_edit", "header_edit", "footer_edit");
-        app.getGroupHelper().editGroup(index, group);
-        List<GroupData> after = app.getGroupHelper().getGroupList();
+        app.group().edit(index, group);
+        List<GroupData> after = app.group().list();
         Assert.assertEquals(after.size(), before.size());
 
         before.remove(before.size() - 1);
