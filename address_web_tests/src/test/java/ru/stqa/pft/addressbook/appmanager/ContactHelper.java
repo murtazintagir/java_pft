@@ -91,6 +91,12 @@ public class ContactHelper extends HelperBase{
 
     }
 
+    public void editContact(ContactData contact) {
+        fillContactForm(contact, false);
+        submitContactEdit();
+        returnToHomePage();
+    }
+
     public int getContactCount() {
         return wd.findElements(By.name("selected[]")).size();
     }
