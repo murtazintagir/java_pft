@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GroupData;
-import ru.stqa.pft.addressbook.appmanager.NavigationHelper;
-import ru.stqa.pft.addressbook.appmanager.HelperBase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +19,9 @@ public class GroupHelper extends HelperBase {
     }
 
     public void fillGroupForm(GroupData groupData) {
-        type(By.name("group_name"), groupData.name());
-        type(By.name("group_header"), groupData.header());
-        type(By.name("group_footer"), groupData.footer());
+        type(By.name("group_name"), groupData.getName());
+        type(By.name("group_header"), groupData.getHeader());
+        type(By.name("group_footer"), groupData.getFooter());
     }
 
     public void initGroupCreation() {

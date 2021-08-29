@@ -1,15 +1,9 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.appmanager.GroupHelper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ContactHelper extends HelperBase{
 
@@ -22,35 +16,35 @@ public class ContactHelper extends HelperBase{
     }
 
     public void fillContactForm(ContactData contactData, boolean creation) {
-        type(By.name("firstname"),contactData.first_name());
-        type(By.name("middlename"),contactData.middle_name());
-        type(By.name("lastname"),contactData.last_name());
-        type(By.name("nickname"),contactData.nickname());
-        type(By.name("title"),contactData.title());
-        type(By.name("company"),contactData.company());
-        type(By.name("address"),contactData.address());
-        type(By.name("home"),contactData.home());
-        type(By.name("mobile"),contactData.mobile());
-        type(By.name("work"),contactData.work());
-        type(By.name("fax"),contactData.fax());
-        type(By.name("email"),contactData.email());
-        type(By.name("email2"),contactData.email2());
-        type(By.name("email3"),contactData.email3());
-        type_select(By.name("bday"), contactData.bday());
-        type_select(By.name("bmonth"), contactData.bmonth());
-        type(By.name("byear"),contactData.byear());
-        type_select(By.name("aday"), contactData.aday());
-        type_select(By.name("amonth"), contactData.amonth());
-        type(By.name("ayear"),contactData.ayear());
+        type(By.name("firstname"), contactData.getFirst_name());
+        type(By.name("middlename"),contactData.getMiddle_name());
+        type(By.name("lastname"),contactData.getLast_name());
+        type(By.name("nickname"),contactData.getNickname());
+        type(By.name("title"),contactData.getTitle());
+        type(By.name("company"),contactData.getCompany());
+        type(By.name("address"),contactData.getAddress());
+        type(By.name("home"),contactData.getHome());
+        type(By.name("mobile"),contactData.getMobile());
+        type(By.name("work"),contactData.getWork());
+        type(By.name("fax"),contactData.getFax());
+        type(By.name("email"),contactData.getEmail());
+        type(By.name("email2"),contactData.getEmail2());
+        type(By.name("email3"),contactData.getEmail3());
+        type_select(By.name("bday"), contactData.getBday());
+        type_select(By.name("bmonth"), contactData.getBmonth());
+        type(By.name("byear"),contactData.getByear());
+        type_select(By.name("aday"), contactData.getAday());
+        type_select(By.name("amonth"), contactData.getAmonth());
+        type(By.name("ayear"),contactData.getAyear());
         if (creation) {
-            type_select(By.name("new_group"), contactData.group());
+            type_select(By.name("new_group"), contactData.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
-        type(By.name("homepage"),contactData.homepage());
-        type(By.name("address2"),contactData.address2());
-        type(By.name("phone2"),contactData.phone2());
-        type(By.name("notes"),contactData.notes());
+        type(By.name("homepage"),contactData.getHomepage());
+        type(By.name("address2"),contactData.getAddress2());
+        type(By.name("phone2"),contactData.getPhone2());
+        type(By.name("notes"),contactData.getNotes());
     }
 
     public void initContactCreation() {
