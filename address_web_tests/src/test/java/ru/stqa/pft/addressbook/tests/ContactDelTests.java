@@ -20,7 +20,7 @@ public class ContactDelTests extends TestBase{
         }
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testDelContact(){
         List<ContactData> before = app.contact().list();
         int index = before.size() - 1;
