@@ -13,10 +13,12 @@ public class ContactDelTests extends TestBase{
     public void ensurePreconditions(){
         app.goTo().contactPage();
         if (app.contact().list().size() == 0){
-            app.contact().create(new ContactData("first_name", "middle_name", "last_name",
-                    "nickname", "title", "company", "address", "home", "mobile",
-                    "work", "fax", "email", "email2", "email3", "homepage", "address2",
-                    "phone2", "notes", "3", "July", "byear", "4", "April", "ayear", "[none]"), true);
+            ContactData contact = new ContactData().withFirst_name("first_name").withMiddle_name("middle_name").withLast_name("last_name").
+                    withNickname("nickname").withTitle("title").withCompany("company").withAddress("address").withHome("home").
+                    withMobile("mobile").withWork("work").withFax("fax").withEmail("email").withEmail2("email2").withEmail3("email3").
+                    withHomepage("homepage").withtAddress2("address2").withPhone2("phone2").withNotes("notes").withBday("3").
+                    withBmonth("July").withByear("byear").withAday("4").withAmonth("April").withAyear("ayear").withGroup("[none]");
+            app.contact().create(contact, true);
         }
     }
 
