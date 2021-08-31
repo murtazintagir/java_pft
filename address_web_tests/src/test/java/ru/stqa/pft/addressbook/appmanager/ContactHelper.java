@@ -118,7 +118,7 @@ public class ContactHelper extends HelperBase{
         AssertTrue();
     }
 
-    public int getContactCount() {
+    public int count() {
         return wd.findElements(By.name("selected[]")).size();
     }
 

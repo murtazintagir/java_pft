@@ -5,12 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
+import ru.stqa.pft.addressbook.appmanager.NavigationHelper;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GroupHelper extends HelperBase {
+public class GroupHelper extends NavigationHelper {
 
     public GroupHelper(WebDriver wd) {
         super(wd);
@@ -54,6 +55,16 @@ public class GroupHelper extends HelperBase {
         returnToGroupPage();
     }
 
+    public void createBad(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        groupCashe = null;
+        if (isElementPresent(By.linkText("group page"))){
+            returnToGroupPage();
+        }
+    }
+
     public void edit(GroupData group) {
         selectById(group.getId());
         initGroupEdit();
@@ -74,7 +85,7 @@ public class GroupHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
     }
 
-    public int getGroupCount() {
+    public int count() {
         return wd.findElements(By.name("selected[]")).size();
     }
 

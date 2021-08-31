@@ -37,8 +37,8 @@ public class ContactEditTests extends TestBase{
                 withEmail3("email3").withHomepage("homepage").withtAddress2("address2").withPhone2("phone2").withNotes("notes").
                 withBday("3").withBmonth("July").withByear("byear").withAday("4").withAmonth("April").withAyear("ayear");
         app.contact().edit(contact);
+        assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.contact().all();
-        assertThat(after.size(), equalTo(before.size()));
         assertThat(after, equalTo(before.without(editContact).withAdded(contact)));
     }
 }
