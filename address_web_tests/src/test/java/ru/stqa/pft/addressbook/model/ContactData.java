@@ -278,11 +278,11 @@ public class ContactData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return Objects.equals(first_name, that.first_name) && Objects.equals(last_name, that.last_name);
+        return id == that.id && Objects.equals(first_name, that.first_name) && Objects.equals(last_name, that.last_name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(first_name, last_name);
+        return Objects.hash(id, first_name, last_name);
     }
 }
